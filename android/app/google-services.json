@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "960137440339",
+    "project_id": "steeve-1998-554a8",
+    "storage_bucket": "steeve-1998-554a8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:960137440339:android:88f42f3b48e434a3f5aaa6",
+        "android_client_info": {
+          "package_name": "com.example.projet_flutter_find_your_movie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo3EO1AXmkiwXYU_eD59_AsnU6PUqiSBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
