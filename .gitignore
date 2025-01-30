@@ -32,7 +32,8 @@ migrate_working_dir/
 .pub/
 /build/
 /lib/firebase_options.dart
-/lib/
+/lib/constants/api_constants.dart  # Exclure uniquement le fichier avec ta clé API, mais PAS tout le dossier lib !
+
 
 # Symbolication related
 app.*.symbols
