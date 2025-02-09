@@ -30,11 +30,9 @@ Certains fichiers ne sont pas inclus pour des raisons de sécurité. Ajoutez-les
 
 lib/constants/api_constants.dart
 lib/firebase_options.dart
+
 📌 Exemple de api_constants.dart :
 
-dart
-Copier
-Modifier
 class ApiConstants {
 static const String baseUrl = 'https://api.themoviedb.org/3';
 static const String apiKey = 'VOTRE_API_KEY';
