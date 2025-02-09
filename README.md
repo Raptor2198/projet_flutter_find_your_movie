@@ -29,6 +29,7 @@ Certains fichiers ne sont pas inclus pour des raisons de sécurité. Ajoutez-les
 📌 Fichiers à créer :
 
 lib/constants/api_constants.dart
+
 lib/firebase_options.dart
 
 📌 Exemple de api_constants.dart :
