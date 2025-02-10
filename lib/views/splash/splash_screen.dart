@@ -10,7 +10,7 @@ class SplashScreen extends StatelessWidget {
       Get.offNamed('/login');
     });
 
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.blue,
       body: Center(
         child: Column(

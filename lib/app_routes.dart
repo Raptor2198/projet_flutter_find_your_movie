@@ -14,10 +14,10 @@ class Routes {
 
 class AppRouter {
   static final pages = [
-    GetPage(name: Routes.splash, page: () => SplashScreen()),
-    GetPage(name: Routes.login, page: () => LoginScreen()),
-    GetPage(name: Routes.home, page: () => HomeScreen()),
-    GetPage(name: Routes.register, page: () => RegisterScreen()),
+    GetPage(name: Routes.splash, page: () => const SplashScreen()),
+    GetPage(name: Routes.login, page: () => const LoginScreen()),
+    GetPage(name: Routes.home, page: () => const HomeScreen()),
+    GetPage(name: Routes.register, page: () => const RegisterScreen()),
 
   ];
 
