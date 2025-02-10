@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import '../../constants/api_constants.dart';
 import '../../services/tmdb_service.dart';
+import 'package:projet_flutter_find_your_movie/env.dart';
 
 class MovieDetailsScreen extends StatefulWidget {
   final Map<String, dynamic> movie;
@@ -63,7 +63,7 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
                 Hero(
                   tag: widget.movie['id'], // Tag correspondant
                   child: Image.network(
-                    '${ApiConstants.imageBaseUrl}${widget.movie['poster_path']}',
+                    '${Env.imageBaseUrl}${widget.movie['poster_path']}',
                     fit: BoxFit.cover,
                     width: double.infinity,
                     height: 300,
@@ -160,7 +160,7 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
                                 Hero(
                                   tag: similarMovie['id'], // Hero pour la transition
                                   child: Image.network(
-                                    '${ApiConstants.imageBaseUrl}${similarMovie['poster_path']}',
+                                    '${Env.imageBaseUrl}${similarMovie['poster_path']}',
                                     fit: BoxFit.cover,
                                     width: 100,
                                     height: 150,

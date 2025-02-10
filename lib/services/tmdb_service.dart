@@ -1,10 +1,11 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../constants/api_constants.dart';
+import 'package:projet_flutter_find_your_movie/env.dart';
 
 class TMDBService {
-  final String _apiKey = ApiConstants.apiKey;
-  final String _baseUrl = "https://api.themoviedb.org/3";
+  final String _apiKey = Env.apiKey;
+  final String _baseUrl = Env.baseUrl;
+  final String _imageBaseUrl = Env.imageBaseUrl;
   final http.Client client;
 
   TMDBService({http.Client? client}) : client = client ?? http.Client();
@@ -45,8 +46,8 @@ class TMDBService {
   }
 
   Future<List<dynamic>> getMovieTrailers(int movieId) async {
-    final url = '${ApiConstants.baseUrl}/movie/$movieId/videos?api_key=${ApiConstants.apiKey}';
-    final response = await client.get(Uri.parse(url));
+    final url = Uri.parse('$_baseUrl/movie/$movieId/videos?api_key=$_apiKey');
+    final response = await client.get(url);
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
