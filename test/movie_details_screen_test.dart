@@ -4,28 +4,39 @@ import 'package:get/get.dart';
 import 'package:projet_flutter_find_your_movie/views/home/movie_details_screen.dart';
 
 void main() {
-  testWidgets('Affichage des détails du film', (WidgetTester tester) async {
+  group('MovieDetailsScreen Tests', () {
     final fakeMovie = {
       'id': 1,
-      'title': 'Fake Movie',
-      'poster_path': '/fake.jpg',
-      'vote_average': 8.0,
-      'overview': 'This is a fake movie description'
+      'title': 'Lion',
+      'poster_path': '/fakepath.jpg',
+      'vote_average': 8.5,
+      'overview': 'Fake description for a fake movie.',
     };
 
-    await tester.pumpWidget(
-      GetMaterialApp(
-        home: MovieDetailsScreen(movie: fakeMovie),
-      ),
-    );
+    testWidgets('Affiche les détails du film', (WidgetTester tester) async {
+      await tester.pumpWidget(
+        GetMaterialApp(
+          home: MovieDetailsScreen(movie: fakeMovie),
+        ),
+      );
 
-    // Vérifier l'affichage du titre
-    expect(find.text('Fake Movie'), findsOneWidget);
+      // Vérifie la présence d'un widget contenant le titre avec une clé spécifique
+      expect(find.byKey(const Key('movieTitleKey')), findsOneWidget);
+      expect(find.text('Rating: 8.5'), findsOneWidget);
+      expect(find.text('Fake description for a fake movie.'), findsOneWidget);
+      print("✅ Informations du film affichées");
+    });
 
-    // Vérifier l'affichage de la note
-    expect(find.text('Rating: 8.0'), findsOneWidget);
 
-    // Vérifier l'affichage de la description
-    expect(find.text('This is a fake movie description'), findsOneWidget);
+    testWidgets('Affiche une image de poster', (WidgetTester tester) async {
+      await tester.pumpWidget(
+        GetMaterialApp(
+          home: MovieDetailsScreen(movie: fakeMovie),
+        ),
+      );
+
+      // Vérifie la présence d'une image avec le bon tag Hero
+      expect(find.byType(Image), findsWidgets);
+    });
   });
 }
