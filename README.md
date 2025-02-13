@@ -23,22 +23,18 @@ Les données sont obtenues via The Movie Database (TMDb).
 git clone https://github.com/Raptor2198/projet_flutter_find_your_movie.git
 cd projet_flutter_find_your_movie
 
-🔧 2. Ajouter les fichiers sensibles
-Certains fichiers ne sont pas inclus pour des raisons de sécurité. Ajoutez-les manuellement :
+🔧 2. Configurer les clés d'API sensibles
+Pour des raisons de sécurité, certaines informations sensibles ne sont pas incluses dans le dépôt.
+Créez un fichier .env à la racine du projet et ajoutez-y les variables suivantes :
 
-📌 Fichiers à créer :
+API_KEY=VOTRE_API_KEY
+BASE_URL=
+IMAGE_BASE_URL=
+Remarque : Remplacez VOTRE_API_KEY par votre clé TMDb réelle.
 
-lib/constants/api_constants.dart
+Les valeurs de ce fichier seront accessibles dans le code grâce au package Envied (vous avez ajouté envied_generator dans votre projet).
 
-lib/firebase_options.dart
-
-📌 Exemple de api_constants.dart :
-
-class ApiConstants {
-static const String baseUrl = 'https://api.themoviedb.org/3';
-static const String apiKey = 'VOTRE_API_KEY';
-static const String imageBaseUrl = 'https://image.tmdb.org/t/p/w500';
-}
+Si vous utilisez également Firebase, assurez-vous que la configuration Firebase est correctement mise en place dans votre fichier firebase_options.dart.
 ➡️ Remplacez "VOTRE_API_KEY" par votre clé TMDb.
 
 ▶️ 3. Exécuter l'application
